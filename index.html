@@ -50,13 +50,52 @@ h1 {
 
 /* TARJETAS */
 .card {
-    background: rgba(255,255,255,0.9);
-    color: black;
+    position: relative;
     width: 250px;
-    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    transition: 0.3s;
+    border-radius: 15px;
+    color: white;
+    overflow: hidden;
+
+    /* 🔥 COLOR DINÁMICO */
+    background: linear-gradient(135deg, #ff4ecd, #ff7eb3, #a855f7);
+    background-size: 200% 200%;
+    animation: animCard 6s ease infinite;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.4s;
+}
+
+/* 🔥 ANIMACIÓN DE COLOR */
+@keyframes animCard {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🔥 EFECTO BRILLO */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+    opacity: 1;
+}
+
+/* 🔥 HOVER PRO */
+.card:hover {
+    transform: translateY(-12px) scale(1.07);
+    box-shadow: 0 20px 40px rgba(255, 0, 150, 0.6);
 }
 
 .card:hover {
@@ -68,11 +107,18 @@ h1 {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #ff4ecd;
+    background: linear-gradient(135deg, #ff4ecd, #a855f7);
     color: white;
     text-decoration: none;
     border-radius: 8px;
+    transition: 0.3s;
 }
+
+.boton:hover {
+    background: linear-gradient(135deg, #e60073, #7e22ce);
+}
+
+    
 
 .boton:hover {
     background-color: #e60073;
