@@ -3,38 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Computación Gráfica</title>
-<h1>Ruth Navarro Farfan</h1>
+
 <style>
-<script>
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mousemove", (e) => {
-
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = -(y - centerY) / 10;
-        const rotateY = (x - centerX) / 10;
-
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-        card.style.setProperty('--x', `${x}px`);
-        card.style.setProperty('--y', `${y}px`);
-    });
-
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "rotateX(0) rotateY(0)";
-    });
-
-});
-</script>
-    
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -57,17 +27,13 @@ h1 {
     margin: 30px 0;
 }
 
-/* 🔥 SECCIONES */
+/* SECCIONES */
 .seccion {
     background: rgba(255,255,255,0.15);
     margin: 20px;
     padding: 20px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
-}
-
-.seccion h2 {
-    margin-bottom: 20px;
 }
 
 /* CONTENEDOR */
@@ -78,8 +44,9 @@ h1 {
     gap: 20px;
 }
 
-/* TARJETAS */
+/* TARJETAS 3D */
 .card {
+    position: relative;
     width: 250px;
     padding: 20px;
     border-radius: 15px;
@@ -96,14 +63,12 @@ h1 {
     transition: transform 0.2s ease;
 }
 
-/* animación color */
 @keyframes animCard {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* efecto profundidad */
 .card * {
     transform: translateZ(30px);
 }
@@ -123,42 +88,6 @@ h1 {
     opacity: 1;
 }
 
-/* 🔥 ANIMACIÓN DE COLOR */
-@keyframes animCard {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* 🔥 EFECTO BRILLO */
-.card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-    transform: rotate(25deg);
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.card:hover::before {
-    left: 100%;
-    opacity: 1;
-}
-
-/* 🔥 HOVER PRO */
-.card:hover {
-    transform: translateY(-12px) scale(1.07);
-    box-shadow: 0 20px 40px rgba(255, 0, 150, 0.6);
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-}
-
 /* BOTÓN */
 .boton {
     display: inline-block;
@@ -175,13 +104,7 @@ h1 {
     background: linear-gradient(135deg, #e60073, #7e22ce);
 }
 
-    
-
-.boton:hover {
-    background-color: #e60073;
-}
-
-/* EFECTO LUZ */
+/* LUZ */
 .cursor-luz {
     position: fixed;
     width: 200px;
@@ -198,89 +121,60 @@ h1 {
 
 <h1>Mis Figuras - Computación Gráfica</h1>
 
-<!-- 🔵 ACTIVIDAD EN CLASE -->
+<!-- ACTIVIDAD EN CLASE -->
 <div class="seccion">
-    <h2>Actividad en Clase</h2>
-    <div class="contenedor">
+<h2>Actividad en Clase</h2>
+<div class="contenedor">
 
-        <div class="card">
-            <h3>Cuadrado y Triángulo</h3>
-            <a href="figura_circular.html" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Funciones X Y</h3>
-            <a href="funciones_de_x_y_y.html" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Gráfico de Barras</h3>
-            <a href="GRAFICOBARAS.HTML" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Función Matemática</h3>
-            <a href="graficar_una_funcion_matematica.html" class="boton">Ver</a>
-        </div>
-
-    </div>
+<div class="card">
+<h3>Cuadrado y Triángulo</h3>
+<a href="figura_circular.html" class="boton">Ver</a>
 </div>
 
-<!-- 🟣 ACTIVIDAD 4 -->
-<div class="seccion">
-    <h2>Actividad 4</h2>
-    <div class="contenedor">
-
-        <div class="card">
-            <h3>Barras Dinámicas</h3>
-            <a href="GRÁFICO DE BARRAS DINÁMICO.html" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Puntos en Movimiento</h3>
-            <a href="Gráfico de Puntos en Movimiento.html" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Curva cos(x)</h3>
-            <a href="Curva Dinámica de la Función Cosen.html" class="boton">Ver</a>
-        </div>
-
-    </div>
+<div class="card">
+<h3>Funciones X Y</h3>
+<a href="funciones_de_x_y_y.html" class="boton">Ver</a>
 </div>
 
-<!-- 🔴 ACTIVIDAD 5 -->
-<div class="seccion">
-    <h2>Actividad 5</h2>
-    <div class="contenedor">
-
-        <div class="card">
-            <h3>Traslación</h3>
-            <a href="traslacion movimiento x.html" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Rotación</h3>
-            <a href="rotacion.html" class="boton">Ver</a>
-        </div>
-
-        <div class="card">
-            <h3>Transformaciones</h3>
-            <a href="TRANSFORMACIONES INTERACTIVAS.html" class="boton">Ver</a>
-        </div>
-
-    </div>
+</div>
 </div>
 
-<!-- EFECTO LUZ -->
+<!-- LUZ -->
 <div class="cursor-luz" id="luz"></div>
 
 <script>
+// LUZ
 const luz = document.getElementById("luz");
 
 document.addEventListener("mousemove", (e) => {
     luz.style.left = e.clientX + "px";
     luz.style.top = e.clientY + "px";
+});
+
+// 3D CARDS
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = -(y - centerY) / 10;
+        const rotateY = (x - centerX) / 10;
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0) rotateY(0)";
+    });
 });
 </script>
 
