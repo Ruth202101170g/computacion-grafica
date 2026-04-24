@@ -1,1 +1,126 @@
-<h1> ruth navarro farfan </h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Computación Gráfica</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+
+    /* 🎀 FONDO ROSADO */
+    background: linear-gradient(270deg, #ff4ecd, #ff7eb3, #ff4ecd);
+    background-size: 600% 600%;
+
+    /* 🔥 ANIMACIÓN */
+    animation: fondoAnimado 10s ease infinite;
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    margin: 30px 0;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* TARJETAS */
+.card {
+    background: rgba(255,255,255,0.9);
+    color: black;
+    width: 250px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* BOTÓN */
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4ecd;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.boton:hover {
+    background-color: #e60073;
+}
+
+/* 🔥 EFECTO MOUSE (LUZ) */
+.cursor-luz {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Mis Figuras - Computación Gráfica</h1>
+
+<div class="contenedor">
+
+    <div class="card">
+        <h2>Actividad Cuadrado y Triángulo</h2>
+        <a href="figura_circular.html" class="boton">Ver</a>
+    </div>
+
+    <div class="card">
+        <h2>Funciones X Y</h2>
+        <a href="funciones_de_x_y_y.html" class="boton">Ver</a>
+    </div>
+
+    <div class="card">
+        <h2>Gráfico de Barras</h2>
+        <a href="GRAFICOBARAS.HTML" class="boton">Ver</a>
+    </div>
+
+    <div class="card">
+        <h2>Función Matemática</h2>
+        <a href="graficar_una_funcion_matematica.html" class="boton">Ver</a>
+    </div>
+
+</div>
+
+<!-- 🔥 EFECTO INTERACTIVO -->
+<div class="cursor-luz" id="luz"></div>
+
+<script>
+const luz = document.getElementById("luz");
+
+document.addEventListener("mousemove", (e) => {
+    luz.style.left = e.clientX + "px";
+    luz.style.top = e.clientY + "px";
+});
+</script>
+
+</body>
+</html>
