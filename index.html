@@ -12,11 +12,8 @@ body {
     text-align: center;
     overflow-x: hidden;
 
-    /* 🎀 FONDO ROSADO */
     background: linear-gradient(270deg, #ff4ecd, #ff7eb3, #ff4ecd);
     background-size: 600% 600%;
-
-    /* 🔥 ANIMACIÓN */
     animation: fondoAnimado 10s ease infinite;
 }
 
@@ -30,13 +27,25 @@ h1 {
     margin: 30px 0;
 }
 
+/* 🔥 SECCIONES */
+.seccion {
+    background: rgba(255,255,255,0.15);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.seccion h2 {
+    margin-bottom: 20px;
+}
+
 /* CONTENEDOR */
 .contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
 }
 
 /* TARJETAS */
@@ -69,7 +78,7 @@ h1 {
     background-color: #e60073;
 }
 
-/* 🔥 EFECTO MOUSE (LUZ) */
+/* EFECTO LUZ */
 .cursor-luz {
     position: fixed;
     width: 200px;
@@ -86,58 +95,81 @@ h1 {
 
 <h1>Mis Figuras - Computación Gráfica</h1>
 
-<div class="contenedor">
+<!-- 🔵 ACTIVIDAD EN CLASE -->
+<div class="seccion">
+    <h2>Actividad en Clase</h2>
+    <div class="contenedor">
 
-   <div class="card">
-        <h2>Actividad Cuadrado y un Triangulo</h2>
-        <a href="figura_circular.html" class="boton">Ver</a>
-    </div>
+        <div class="card">
+            <h3>Cuadrado y Triángulo</h3>
+            <a href="figura_circular.html" class="boton">Ver</a>
+        </div>
 
-    <div class="card">
-        <h2>funciones de X Y</h2>
-        <a href="funciones_de_x_y_y.html" class="boton">Ver</a>
-    </div>
+        <div class="card">
+            <h3>Funciones X Y</h3>
+            <a href="funciones_de_x_y_y.html" class="boton">Ver</a>
+        </div>
 
-    <div class="card">
-        <h2>Grafico de Barras</h2>
-        <a href="GRAFICOBARAS.HTML" class="boton">Ver</a>
-    </div>
+        <div class="card">
+            <h3>Gráfico de Barras</h3>
+            <a href="GRAFICOBARAS.HTML" class="boton">Ver</a>
+        </div>
 
-    <div class="card">
-        <h2>Graficar Funcion Matematicas</h2>
-        <a href="graficar_una_funcion_matematica.html" class="boton">Ver</a>
-    </div>
+        <div class="card">
+            <h3>Función Matemática</h3>
+            <a href="graficar_una_funcion_matematica.html" class="boton">Ver</a>
+        </div>
 
-    <div class="card">
-        <h2>Gráfico de Barras Dinámicos</h2>
-        <a href="GRÁFICO DE BARRAS DINÁMICO.html" class="boton">Ver</a>
     </div>
-    <div class="card">
-        <h2>Puntos en Movimiento</h2>
-        <a href="Gráfico de Puntos en Movimiento.html" class="boton">Ver</a>
-    </div>
-    <div class="card">
-        <h2>Curva Dinámica y = cos(x)</h2>
-        <a href="Curva Dinámica de la Función Cosen.html" class="boton">Ver</a>
-
-        
-    </div>
-     <div class="card">
-        <h2>traslacion movimiento X </h2>
-        <a href="traslacion movimiento x.html" class="boton">Ver</a>
-    </div>
-     <div class="card">
-        <h2>rotacion continua en el cubo</h2>
-        <a href="rotacion.html" class="boton">Ver</a>
-    </div>
-     <div class="card">
-        <h2>Transformacion Interactivas</h2>
-        <a href="TRANSFORMACIONES INTERACTIVAS.html" class="boton">Ver</a>
-    </div>
-
 </div>
 
-<!-- 🔥 EFECTO INTERACTIVO -->
+<!-- 🟣 ACTIVIDAD 4 -->
+<div class="seccion">
+    <h2>Actividad 4</h2>
+    <div class="contenedor">
+
+        <div class="card">
+            <h3>Barras Dinámicas</h3>
+            <a href="GRÁFICO DE BARRAS DINÁMICO.html" class="boton">Ver</a>
+        </div>
+
+        <div class="card">
+            <h3>Puntos en Movimiento</h3>
+            <a href="Gráfico de Puntos en Movimiento.html" class="boton">Ver</a>
+        </div>
+
+        <div class="card">
+            <h3>Curva cos(x)</h3>
+            <a href="Curva Dinámica de la Función Cosen.html" class="boton">Ver</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- 🔴 ACTIVIDAD 5 -->
+<div class="seccion">
+    <h2>Actividad 5</h2>
+    <div class="contenedor">
+
+        <div class="card">
+            <h3>Traslación</h3>
+            <a href="traslacion movimiento x.html" class="boton">Ver</a>
+        </div>
+
+        <div class="card">
+            <h3>Rotación</h3>
+            <a href="rotacion.html" class="boton">Ver</a>
+        </div>
+
+        <div class="card">
+            <h3>Transformaciones</h3>
+            <a href="TRANSFORMACIONES INTERACTIVAS.html" class="boton">Ver</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- EFECTO LUZ -->
 <div class="cursor-luz" id="luz"></div>
 
 <script>
